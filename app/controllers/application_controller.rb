@@ -1,16 +1,21 @@
-get '/' do
-    erb :index
-end
+require 'sinatra/base'
 
-post '/teams' do
-    # binding.pry
-    @team = Team.new(params[:team])
-    #binding.pry
-    params[:team][:members].each do |details|
-        SuperHero.new(details)
+class App < Sinatra::Base
+
+    set :views, Proc.new { File.join(root, "../views/") }
+
+    get '/' do
+      erb :super_hero
     end
-    @members = SuperHero.all
 
-    erb :team
+    post '/teams' do
+      @team = Team.new(params[:team])
+      params[:team][:hero].each do |hero|
+        Hero.new(hero)
+      end
+
+      @members = Hero.all
+      erb :team
+    end
 
 end
