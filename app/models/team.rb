@@ -12,6 +12,6 @@ class Team
 
     def self.all
         TEAMS
-     end
+    end
 
 end
