@@ -1,4 +1,5 @@
 class Team
+
     attr_accessor :name, :motto
     TEAMS = []
 
@@ -12,3 +13,5 @@ class Team
     def self.all
         TEAMS
      end
+
+end
