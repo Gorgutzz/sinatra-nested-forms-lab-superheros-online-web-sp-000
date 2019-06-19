@@ -1,4 +1,4 @@
-class Team 
+class Team
     attr_accessor :name, :motto
     TEAMS = []
 
@@ -6,7 +6,7 @@ class Team
         @name = params[:name]
         @motto = params[:motto]
         TEAMS << self
-    end 
+    end
 
 
     def self.all
